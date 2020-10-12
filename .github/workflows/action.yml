@@ -33,7 +33,7 @@ jobs:
         run: |
           mkdir gh-pages
           ls
-          python script.py | tee > gh-pages/README.md
+          python script.py > gh-pages/index.md
       # Deploy pages
       - name: Deploy pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2

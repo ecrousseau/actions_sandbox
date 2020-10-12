@@ -1,9 +1,9 @@
 name: Example-Action
 
 # When to run
-on:
-  schedule:
-  - cron: '*/15 * * * *' # every 15 minutes - for help with cron expressions see https://crontab.guru/
+on: push  # remove 'push' and un-comment the below to run on a schedule
+  #schedule:
+  #- cron: '*/15 * * * *' # every 15 minutes - for help with cron expressions see https://crontab.guru/
 
 # What to do
 jobs:

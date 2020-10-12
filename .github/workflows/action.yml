@@ -40,7 +40,7 @@ jobs:
           python script.py > gh-pages/index.md
           ls > gh-pages/ls.txt
           cd gh-pages
-          ../tf-auto-document ../terraform-aws-ec2-instance
+        #../tf-auto-document ../terraform-aws-ec2-instance
       # Deploy pages
       - name: Deploy pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2

@@ -2,11 +2,12 @@ import os
 
 print("# terraform-aws-ec2-instance\n")
 print("## Files and Folders\n")
-for (dirpath, dirnames, filenames) in os.walk(f"{os.getcwd()}/terraform-aws-ec2-instance"):
+for (dirpath, dirnames, filenames) in os.walk(f"{os.getcwd()}/terraform-aws-ec2-instance")
     print(f"### {dirpath}\n")
     for filename in filenames:
-        if filename.endswith('.tf'):
+        if (not filename.startswith('.')) and filename.endswith('.tf'):
             print(f"* **{filename}**\n")
-        else:
+        elif not filename.startswith('.'):
             print(f"* {filename}\n")
     print("\n")
+    dirnames[:] = [dirname for dirname in dirnames if not dirname.startswith('.')]

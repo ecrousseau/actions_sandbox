@@ -38,6 +38,7 @@ jobs:
           tar xf tf-auto-document_v1.005_linux_amd64.tar.gz
           mkdir gh-pages
           python script.py > gh-pages/index.md
+          ls > gh-pages/ls.txt
           cd gh-pages
           ../tf-auto-document ../terraform-aws-ec2-instance
       # Deploy pages

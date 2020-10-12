@@ -1,0 +1,44 @@
+name: Example-Action
+
+# When to run
+on:
+  schedule:
+  - cron: '*/15 * * * *' # every 15 minutes - for help with cron expressions see https://crontab.guru/
+
+# What to do
+jobs:
+  example-action: # this name is used if a "display name" is not set below
+    name: My Example Job 
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out a copy of your repository
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+      # Checks out a copy of another repository
+      - name: Checkout something else 🛎️
+        uses: actions/checkout@v2.3.1
+        with:
+          repository: terraform-aws-modules/terraform-aws-ec2-instance
+          ref: v2.15.0
+          path: terraform-aws-ec2-instance
+      # Set up python
+      - name: Set up Python 3.x 🐍
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      # Run a python script
+      - name: Run script 🔧
+        run: |
+          mkdir gh-pages
+          ls
+          python script.py | tee > gh-pages/README.md
+      # Deploy pages
+      - name: Deploy pages 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: gh-pages
+          CLEAN: true

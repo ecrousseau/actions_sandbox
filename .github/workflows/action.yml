@@ -32,7 +32,6 @@ jobs:
       - name: Run script 🔧
         run: |
           mkdir gh-pages
-          ls > gh-pages/ls.md
           python script.py > gh-pages/index.md
       # Deploy pages
       - name: Deploy pages 🚀

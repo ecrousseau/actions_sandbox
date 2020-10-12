@@ -1,8 +1,9 @@
 import os
 
-print("# Example Page\n")
-for (dirpath, dirnames, filenames) in os.walk(os.getcwd()):
-    print(f"# {dirpath}\n")
+print("# terraform-aws-ec2-instance\n")
+print("## Files and Folders\n")
+for (dirpath, dirnames, filenames) in os.walk(f"{os.getcwd()}/terraform-aws-ec2-instance"):
+    print(f"### {dirpath}\n")
     for filename in filenames:
         if filename.endswith('.tf'):
             print(f"* **{filename}**\n")

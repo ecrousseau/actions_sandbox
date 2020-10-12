@@ -1,7 +1,7 @@
 import os
-import os.path
+
 print("# Example Page\n")
-for (dirpath, dirnames, filenames) in walk(os.getcwd()):
+for (dirpath, dirnames, filenames) in os.walk(os.getcwd()):
     print(f"# {dirpath}\n")
     for filename in filenames:
         if filename.endswith('.tf'):

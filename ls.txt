@@ -1,0 +1,12 @@
+total 20M
+drwxr-xr-x 6 runner docker 4.0K Oct 12 06:43 .
+drwxr-xr-x 3 runner docker 4.0K Oct 12 06:43 ..
+drwxr-xr-x 8 runner docker 4.0K Oct 12 06:43 .git
+drwxr-xr-x 3 runner docker 4.0K Oct 12 06:43 .github
+-rw-r--r-- 1 runner docker 1.1K Oct 12 06:43 LICENSE
+-rw-r--r-- 1 runner docker   17 Oct 12 06:43 README.md
+drwxr-xr-x 2 runner docker 4.0K Oct 12 06:43 gh-pages
+-rw-r--r-- 1 runner docker  482 Oct 12 06:43 script.py
+drwxr-xr-x 5 runner docker 4.0K Oct 12 06:43 terraform-aws-ec2-instance
+-rwxr-xr-x 1 runner docker  14M Jun 20 04:13 tf-auto-document
+-rw-r--r-- 1 runner docker 6.7M Oct 12 06:43 tf-auto-document_v1.005_linux_amd64.tar.gz

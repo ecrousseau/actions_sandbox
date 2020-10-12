@@ -36,11 +36,12 @@ jobs:
         run: |
           curl -LO https://github.com/richardjkendall/tf-auto-document/releases/download/v1.005/tf-auto-document_v1.005_linux_amd64.tar.gz
           tar xf tf-auto-document_v1.005_linux_amd64.tar.gz
+          ls -lha > ls.txt
           chmod +x tf-auto-document
           mkdir gh-pages
           python script.py > gh-pages/index.md
           cd gh-pages
-          ../tf-auto-document ../terraform-aws-ec2-instance
+      #../tf-auto-document ../terraform-aws-ec2-instance
       # Deploy pages
       - name: Deploy pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2

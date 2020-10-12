@@ -26,24 +26,13 @@ jobs:
           fetch-depth: 0
       - name: Get tags for terraform-aws-ec2-instance
         run:  cd terraform-aws-ec2-instance && git fetch origin +refs/tags/*:refs/tags/*
-      # Set up python
-      - name: Set up Python 3.x 🐍
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      # Run a python script
+      # Run a script
       - name: Run script 🔧
         run: |
+          curl -LO https://github.com/terraform-docs/terraform-docs/releases/download/v0.10.1/terraform-docs-v0.10.1-linux-amd64
+          chmod +x terraform-docs-v0.10.1-linux-amd64
           mkdir gh-pages
-          curl -LO https://github.com/richardjkendall/tf-auto-document/releases/download/v1.005/tf-auto-document_v1.005_linux_amd64.tar.gz
-          tar xf tf-auto-document_v1.005_linux_amd64.tar.gz
-          chmod +x tf-auto-document
-          file tf-auto-document > gh-pages/file.txt
-          sudo mv tf-auto-document /usr/bin/
-          ls -lha > gh-pages/ls.txt
-          python script.py > gh-pages/index.md
-          cd gh-pages
-        #tf-auto-document ../terraform-aws-ec2-instance
+          ./terraform-docs-v0.10.1-linux-amd64 markdown terraform-aws-ec2-instance > gh-pages/index.md
       # Deploy pages
       - name: Deploy pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2

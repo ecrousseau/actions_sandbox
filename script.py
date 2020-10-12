@@ -10,4 +10,8 @@ for (dirpath, dirnames, filenames) in os.walk(f"{os.getcwd()}/terraform-aws-ec2-
         elif not filename.startswith('.'):
             print(f"* {filename}\n")
     print("\n")
-    dirnames[:] = [dirname for dirname in dirnames if not dirname.startswith('.')]
+    _dirnames = []
+    for dirname in dirnames:
+        if not dirname.startswith('.'):
+            _dirnames.append(dirname)
+    dirnames = _dirnames
